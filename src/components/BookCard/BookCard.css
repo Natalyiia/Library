@@ -1,0 +1,16 @@
+.card{
+    width:200px;
+    height:370px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color:#EBE0C5;
+    overflow: hidden;
+}
+.cardTitle{
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
