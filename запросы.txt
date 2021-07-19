@@ -1,0 +1,6 @@
+Найти все записи:
+https://www.googleapis.com/books/v1/volumes?q=all&key=AIzaSyBGBaY2yexT32u_bxDDAgZ22ia7niOkH2o
+-------------------------------------------------------------------------
+Пагинация:
+https://www.googleapis.com/books/v1/volumes?q=all&startIndex=29&maxResults=30&key=AIzaSyBGBaY2yexT32u_bxDDAgZ22ia7niOkH2o
+-------------------------------------------------------------------------
