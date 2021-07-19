@@ -1,0 +1,37 @@
+.search-field,.sorting-field,.filter-field,.button-search{
+    font-family: inherit;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: black;
+}
+.search-field{
+    width:20%;
+    min-width:150px;
+}
+
+.button-search:hover{
+    background: #809663;
+    color:white;
+    border-color: white;
+}
+
+.filter-field option:hover{
+    box-shadow: 0 0 10px 100px #fff inset !important;
+    /*box-shadow: 0 0 10px 100px #809663 inset;*/
+    color:white;
+    border-color: white;
+}
+label{
+    font-weight: bold;
+    color:#272727 ;
+}
+.filter-block{
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.filter-block label{
+    margin-right: 10px;
+}

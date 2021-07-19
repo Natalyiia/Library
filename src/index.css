@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200;300&family=M+PLUS+Rounded+1c:wght@300&family=Noto+Sans+KR:wght@300&display=swap');
 body {
   margin: 0 auto;
-  min-width: 90%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  max-width: 90%;
+  font-family: 'Bitter', serif;
+  color:#575757;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

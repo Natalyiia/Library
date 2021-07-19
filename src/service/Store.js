@@ -10,7 +10,7 @@ class Store {
             filter: observable,
             getBooksFromAPI: action.bound,
             changeStore: action.bound,
-            isPageLoading:observable,
+            isPageLoading: observable,
         })
     }
 
@@ -22,7 +22,7 @@ class Store {
         category: 'all',
         sorting: 'relevance'
     }
-    isPageLoading=true
+    isPageLoading = true
 
     changeStore(CurFilter) {
         this.books = []
@@ -34,19 +34,24 @@ class Store {
     }
 
     getBooksFromAPI() {
-        runInAction(()=> this.isPageLoading=true)
-        return new Promise(resolve=>{let bookDate = Utils.filterBook(this.filter, this.paginationIndex)
+        runInAction(() => this.isPageLoading = true)
+        return new Promise(resolve => {
+            let bookDate = Utils.filterBook(this.filter, this.paginationIndex)
             bookDate.then(json => {
-                if (json.items.length) {
+                if (json.items) {
                     runInAction(() => {
                         this.books = [...this.books, ...json.items]
                         this.totalResult = json.totalItems
                         this.paginationIndex = this.paginationIndex + json.items.length
-                        this.isPageLoading=false
+                        this.isPageLoading = false
                     })
                 }
+                else{
+                    runInAction(() => {this.isPageLoading = false})
+                }
                 resolve()
-            })})
+            })
+        })
     }
 }
 

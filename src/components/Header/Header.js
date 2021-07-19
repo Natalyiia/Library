@@ -22,7 +22,7 @@ class Header extends Component {
     render() {
         return (
             <div className="content">
-                <h1>Search for Books</h1>
+                <h1 className="site-title">Search for Books</h1>
                 <Filtration onSearch={this.findBooksByFiltration}/>
             </div>
         )

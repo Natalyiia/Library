@@ -5,10 +5,12 @@ export default class BookCard extends Component {
         const {title,authors,categories,imageLinks} = this.props.book.volumeInfo
         return (
             <div className="card">
-                <img src={imageLinks?.smallThumbnail} width="128" height="204"/>
-                <div className="category">{categories!==undefined? categories[0]:'' }</div>
-                <div className="cardTitle">{title}</div>
-                <div className="">{authors!==undefined?authors.join(', '):''}</div>
+                <img src={imageLinks?.smallThumbnail} className="card-cover" alt="Book cover picture"/>
+                <div className="card-info">
+                    <div className="card-category">{categories!==undefined? categories[0]:'' }</div>
+                    <div className="card-title">{title}</div>
+                    <div className="card-author">{authors!==undefined?authors.join(', '):''}</div>
+                </div>
             </div>
         )
     }

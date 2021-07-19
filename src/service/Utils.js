@@ -8,7 +8,7 @@ async function filterBook ( filter,startIndex)  {
             if (filter.category !== 'all') {
              query+=`+subject:${filter.category}`
         }
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?${query}&startIndex=${startIndex}&maxResults=20&orderBy=${filter.sorting}&key=AIzaSyBGBaY2yexT32u_bxDDAgZ22ia7niOkH2o`)
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?${query}&startIndex=${startIndex}&maxResults=30&orderBy=${filter.sorting}&key=AIzaSyBGBaY2yexT32u_bxDDAgZ22ia7niOkH2o`)
         let json1 = await response.json();
             return json1
     }catch (e){

@@ -21,8 +21,7 @@ class mainPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isPageLoading: true
-
+            isLoadingMore: false
         }
         this.handleLoadMore = this.handleLoadMore.bind(this)
         //this.componentDidMount=this.componentDidMount.bind(this)
@@ -34,26 +33,29 @@ class mainPage extends Component {
 
 
     handleLoadMore() {
-        globalStore.getBooksFromAPI()
+        this.setState({isLoadingMore: true})
+        globalStore.getBooksFromAPI().then(() => this.setState({isLoadingMore: false}))
     }
 
     renderLoadMore() {
         return (
-            <button onClick={this.handleLoadMore}>Load More</button>
+            <button onClick={this.handleLoadMore} className="button-load-more">Load More</button>
         )
     }
 
     renderPageContent() {
         return (
             <div>
-                <div>Found {globalStore.totalResult} results</div>
+                <div className="search-total">Found {globalStore.totalResult} results</div>
                 <div className="bookCards">
 
-                    {globalStore.books.map(book => <Link to={`books/${book.id}`} id={book.id}><div key={book.id}><BookCard book={book}/></div></Link>)}
+                    {globalStore.books.map(book => <Link style={{textDecoration: 'none'}} to={`books/${book.id}`}
+                                                         id={book.id}>
+                        <div key={book.id} className="book-link"><BookCard book={book}/></div>
+                    </Link>)}
 
                 </div>
-                {this.renderLoadMore()}
-
+                {globalStore.isPageLoading && this.state.isLoadingMore ? <Loader/> : this.renderLoadMore()}
             </div>
         )
     }
@@ -61,8 +63,8 @@ class mainPage extends Component {
     render() {
         return (
             <>
-                <Header />
-                {globalStore.isPageLoading ? <Loader/> : this.renderPageContent()}
+                <Header/>
+                {globalStore.isPageLoading && !this.state.isLoadingMore ? <Loader/> : this.renderPageContent()}
             </>
 
         )

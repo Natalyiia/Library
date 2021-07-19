@@ -1,16 +1,41 @@
 .card{
-    width:200px;
+    min-width:250px;
+    width: 250px;
     height:370px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px;
-    background-color:#EBE0C5;
+    background-color:#d9d9d9;
     overflow: hidden;
+    flex-grow: 1;
+
 }
-.cardTitle{
-    max-height: 20px;
+.card-info{
+    padding:10px;
+}
+
+.card-cover{
+    box-shadow: 10px 5px 10px #d9d9d9;
+    margin-top: 10px;
+    width:128px;
+    height:204px;
+}
+.card-title{
+    font-weight: bold;
+}
+.card-title,.card-author{
+    -webkit-line-clamp: 2; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
     overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 2px;
-    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.card-category{
+    margin-bottom: 5px;
+}
+.card-category,.card-author,.card-title{
+    text-align: start;
+}
+.card-category,.card-author{
+    color:#575757;
 }

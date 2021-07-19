@@ -1,5 +1,19 @@
+
+
 .content{
-    min-height: 120px;
-    height: 250px;
-    background-image: url('./src/images/headerBackground.jpg');
+    overflow: hidden;
+    min-height: 320px;
+    height: 320px;
+    background-image: url("../../images/headerBackground.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+
+.site-title{
+    color:#313131 ;
+    margin-top:30px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }

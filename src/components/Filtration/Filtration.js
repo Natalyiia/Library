@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Filtration.css'
 
 export default class Filtration extends Component {
     constructor() {
@@ -57,27 +58,37 @@ export default class Filtration extends Component {
     }
 
     renderSearchBar() {
-        return <input type="text" onChange={this.handleSearching} onFocus={this.handleFocus}/>
+        return <input type="text" onChange={this.handleSearching} onFocus={this.handleFocus} className="search-field"/>
     }
 
     renderCategoryFilter() {
-        return (<select onChange={this.handleCategory}>
-                <option selected value="all">all</option>
-                <option value="art">art</option>
-                <option value="biography">biography</option>
-                <option value="computers">computers</option>
-                <option value="history">history</option>
-                <option value="medical">medical</option>
-                <option value="poetry">poetry</option>
-            </select>
+        return (
+           <>
+               <label> Categories
+                   <select onChange={this.handleCategory} className="filter-field">
+                    <option selected value="all">all</option>
+                    <option value="art">art</option>
+                    <option value="biography">biography</option>
+                    <option value="computers">computers</option>
+                    <option value="history">history</option>
+                    <option value="medical">medical</option>
+                    <option value="poetry">poetry</option>
+                  </select>
+               </label>
+           </>
         )
     }
 
     renderSortingBy() {
-        return (<select onChange={this.handleSorting}>
-                <option selected value={"relevance"}>relevance</option>
-                <option value={"newest"}>newest</option>
-            </select>
+        return (
+            <>
+                <label> Sorting by
+                    <select onChange={this.handleSorting} className="sorting-field">
+                        <option selected value={"relevance"} >relevance</option>
+                        <option value={"newest"}>newest</option>
+                    </select>
+                </label>
+            </>
         )
     }
 
@@ -85,10 +96,11 @@ export default class Filtration extends Component {
         return (
             <div>
                 {this.renderSearchBar()}
-                <button onClick={this.searchBooks}>Search</button>
-                <br/>
+                <button onClick={this.searchBooks} className="button-search">Search</button>
+                <div className="filter-block">
                 {this.renderCategoryFilter()}
                 {this.renderSortingBy()}
+                </div>
             </div>
         )
     }
