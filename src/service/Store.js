@@ -29,8 +29,6 @@ class Store {
         this.totalResult = 0
         this.paginationIndex = 0
         this.filter = CurFilter
-        this.getBooksFromAPI()
-
     }
 
     getBooksFromAPI() {

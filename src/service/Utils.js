@@ -1,5 +1,4 @@
 async function filterBook ( filter,startIndex)  {
-    console.log(filter)
     try {
         let query='q=all'
         if (filter.searchString){

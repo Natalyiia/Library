@@ -14,8 +14,12 @@ class Header extends Component {
 
     findBooksByFiltration(CurFilter) {
         this.props.history.push('/')
-        if (JSON.stringify(CurFilter) !== JSON.stringify(globalStore.filter)) {
+        if (JSON.stringify(CurFilter) !== JSON.stringify(globalStore.filter) && this.props.match.path!=="/books/:bookId") {
             globalStore.changeStore(CurFilter);
+            globalStore.getBooksFromAPI();
+        }
+        else if(this.props.match.path==="/books/:bookId"){
+            globalStore.changeStore(CurFilter)
         }
     }
 
